@@ -1,0 +1,12 @@
+#NWTIS dkopic2
+#Sun Apr 03 14:55:19 GMT 2016
+brojIgraca=2
+brojY=5
+brojX=5
+brojBrodova=3
+brojDretvi=5
+port=8200
+adminKorLozinka=dkopic
+evidDatoteka=NWTiS_evidencija0004.bin
+adminKorIme=dkopic
+intervalSerijalizacije=300

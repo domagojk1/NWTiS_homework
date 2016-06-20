@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS dkopic2</comment>
+<entry key="posluzitelj">localhost</entry>
+<entry key="port">143</entry>
+<entry key="username">servis@nwtis.nastava.foi.hr</entry>
+<entry key="password">123456</entry>
+<entry key="interval">10</entry>
+<entry key="trazeniPredmet">NWTiS poruka</entry>
+<entry key="ispravnePoruke">NWTiS_IspravnePoruke</entry>
+<entry key="ostalePoruke">NWTiS_OstalePoruke</entry>
+<entry key="adresaPoruke">admin@nwtis.nastava.foi.hr</entry>
+<entry key="predmetPoruke">Statistika poruka</entry>
+</properties>

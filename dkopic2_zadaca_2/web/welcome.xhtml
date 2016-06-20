@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view locale="#{lokalizacija.odabraniLocale}"/>
+    <h:head>
+        <title>"#{m.index_Naslov}"</title>
+    </h:head>
+    <h:body>
+        <h2>#{m.index_Naslov}</h2>
+        <br/>
+        <h:form>
+            <h:selectOneRadio value="#{lokalizacija.odabraniJezik}" required="true">
+            <f:selectItems value="#{lokalizacija.jezici}"/>
+            </h:selectOneRadio>
+            <br/><br/>
+            <h:commandButton value="#{m.index_Potvrdi}" type="submit" action="#{lokalizacija.odaberiJezik}"/>
+            <br/><br/>
+            <h:commandLink value="#{m.index_Slanje}" action="slanjePoruke"></h:commandLink>
+            <br/><br/>
+            <h:commandLink value="#{m.index_PregledPreuzetihPodataka}" action="pregledPreuzetihPodataka"></h:commandLink>
+        </h:form>
+    </h:body>
+</html>
+

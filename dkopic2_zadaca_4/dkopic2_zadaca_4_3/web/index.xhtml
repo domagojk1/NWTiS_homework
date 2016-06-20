@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Pocetna</title>
+    </h:head>
+    
+    <h:body>
+        <ui:composition template="./predlozak.xhtml">
+
+            <ui:define name="naslov">
+                NWTiS - Pregled adresa i prognoza vremena
+            </ui:define>
+
+            <ui:define name="top">
+                NWTiS - Početna stranica zadaće br. 4
+            </ui:define>
+
+            <ui:define name="left">
+                <h:link outcome="adrese" value="Adrese i prognoze"/>
+                <br/>
+                <h:link outcome="dnevnik" value="Pregled dnevnika"/>
+            </ui:define>
+
+            <ui:define name="content">
+                <br/>
+            </ui:define>
+
+        </ui:composition>
+        
+    </h:body>
+    
+</html>
+

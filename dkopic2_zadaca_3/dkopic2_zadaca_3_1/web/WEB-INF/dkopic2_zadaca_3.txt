@@ -1,0 +1,5 @@
+#NWTIS dkopic2
+#Sun Apr 03 14:59:28 GMT 2016
+APPID=95453dcae137c3505bb45e88ecc00272
+intervalDretve=20
+

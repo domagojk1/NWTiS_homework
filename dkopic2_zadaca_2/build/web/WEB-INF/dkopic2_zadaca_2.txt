@@ -1,0 +1,12 @@
+#NWTIS dkopic2
+#Sun Apr 03 14:59:28 GMT 2016
+posluzitelj=localhost
+port=143
+username=servis@nwtis.nastava.foi.hr
+password=123456
+interval=10
+trazeniPredmet=NWTiS poruka
+ispravnePoruke=NWTiS_IspravnePoruke
+ostalePoruke=NWTiS_OstalePoruke
+adresaPoruke=admin@nwtis.nastava.foi.hr
+predmetPoruke=Statistika poruka

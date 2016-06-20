@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view locale="#{lokalizacija.odabraniLocale}">
+        
+    <h:head>
+        <title>#{m.index_PregledPreuzetihPodataka}</title>
+    </h:head>
+    <h:body>
+        <h2>#{m.index_PregledPreuzetihPodataka}</h2>
+        <h:form>    
+        <h:commandLink value="#{m.index_Naslov}" action="odaberiJezik"></h:commandLink>
+        <br/>
+        <h:commandLink value="#{m.index_Slanje}" action="slanjePoruke"></h:commandLink>
+        <br/><br/>
+ 
+        <h:dataTable value="#{pregledPreuzetihPodataka.files}" var="d">
+            
+            <h:column>
+                <f:facet name="header">#{m.pregledPodataka_Naziv}</f:facet>
+                <h:outputText value="#{d.name}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">#{m.pregledPodataka_Velicina}</f:facet>
+                <h:outputText value="#{d.size}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">#{m.pregledPodataka_Datum}</f:facet>
+                <h:outputText value="#{d.dateTime}">
+                    <f:convertDateTime pattern="dd-MM-yyyy HH:mm:ss"/>
+                </h:outputText>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">#{m.pregledPodataka_Naziv}</f:facet>
+                    <h:commandButton value="#{d.name}" action="#{pregledDatoteke.preuzmiPodatke(d.absolutePath, d.name)}"/>
+            </h:column>
+        </h:dataTable>
+            
+        </h:form>
+    </h:body>
+        
+    </f:view>
+</html>
+

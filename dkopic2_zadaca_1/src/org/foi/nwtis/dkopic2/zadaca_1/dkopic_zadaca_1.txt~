@@ -1,0 +1,11 @@
+port=8000
+evidDatoteka=NWTiS_evidencija.bin
+intervalSerijalizacije=300
+adminKorIme=dkopic
+adminKorLozinka=dkopic
+brojDretvi=5
+brojX=3
+brojY=3
+brojIgraca=3
+brojBodova=2
+

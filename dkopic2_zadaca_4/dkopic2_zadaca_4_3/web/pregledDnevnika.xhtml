@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./predlozak.xhtml">
+
+            <ui:define name="naslov">
+                NWTiS - Pregled Dnevnika
+            </ui:define>
+
+            <ui:define name="top">
+                NWTiS - Pregled dnevnika
+            </ui:define>
+
+            <ui:define name="left">
+                <h:link outcome="adrese" value="Adrese i prognoze"/><br/>
+                <h:link outcome="index" value="Početna stranica"/>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form id="form">
+                    <h:panelGrid columns="5">
+                        
+                        <h:panelGroup layout="block">
+                            <h:outputLabel> Vrijeme od: </h:outputLabel>
+                            <h:inputText id="filterOd" value="#{pregledDnevnika.vrijemeOd}"/>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup layout="block">
+                            <h:outputLabel> Vrijeme do: </h:outputLabel>
+                            <h:inputText id="filterDo" value="#{pregledDnevnika.vrijemeDo}"/>
+                        </h:panelGroup>
+                      
+                        <h:panelGroup layout="block">
+                            <h:outputLabel> IP adresa: </h:outputLabel>
+                            <h:inputText id="filterIp" value="#{pregledDnevnika.filterIpAdresa}"/>
+                        </h:panelGroup>   
+                        
+                        <h:panelGroup layout="block">
+                            <h:outputLabel> Trajanje: </h:outputLabel>
+                            <h:inputText id="filterTrajanje" value="#{pregledDnevnika.filterTrajanje}">
+                                
+                            </h:inputText>
+                        </h:panelGroup>   
+                        
+                        <h:panelGroup layout="block">
+                            <h:outputLabel> Status: </h:outputLabel>
+                            <h:inputText id="filterStatus" value="#{pregledDnevnika.filterStatus}">
+                                
+                            </h:inputText>
+                        </h:panelGroup>
+                    </h:panelGrid>
+                    
+                    <br/>
+                    <h:commandButton value=" Filtriraj " action="#{pregledDnevnika.filtriraj()}">
+                        <f:ajax execute="filterOd filterDo filterIp filterTrajanje filterStatus" render="dnevnik poruka"/>
+                    </h:commandButton>
+                    
+                    <br/>
+                    <h:outputText id="poruka" value="#{pregledDnevnika.poruka}"/>
+                    <br/>
+                    
+                    <h:panelGrid columns="1">
+                        <h:panelGroup id="dnevnik">
+                            <h:dataTable value="#{pregledDnevnika.dnevnikList}" var="d">
+                                <h:column>
+                                    <f:facet name="header">Korisnik</f:facet>
+                                    #{d.korisnik}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">URL</f:facet>
+                                    #{d.url}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">IP adresa</f:facet>
+                                    #{d.ipadresa}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Vrijeme</f:facet>
+                                    <h:outputText value="#{d.vrijeme}">
+                                        <f:convertDateTime pattern="dd-MM-yyyy HH:mm:ss"/>
+                                    </h:outputText>
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Trajanje (ms)</f:facet>
+                                    #{d.trajanje}
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Status</f:facet>
+                                    #{d.status}
+                                </h:column>
+                            </h:dataTable>
+                        </h:panelGroup>
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+ 
+        </ui:composition>
+
+    </body>
+</html>
